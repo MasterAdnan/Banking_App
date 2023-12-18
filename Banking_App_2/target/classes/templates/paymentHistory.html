@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	
+	<!-- Container -->
+	
+		<c:if test="${requestScope.payment_history != null}">
+			<!-- Payment History Table -->
+			<table>
+				<tr>
+					<th>Record Number</th>
+					<th>Beneficiary</th>
+					<th>Beneficiary Account Number</th>
+					<th>Amount</th>
+					<th>Status</th>
+					<th>Reference</th>
+					<th>Reason Code</th>
+					<th>Created at</th>
+				</tr>
+				
+				<!-- Loop through payment history records -->
+				<c:forEach items="${requestScope.payment_history}" var="payments">
+					<tr>
+						<td>${payments.payment_id}</td>
+						<td>${payments.beneficiary}</td>
+						<td>${payments.beneficiary_acc_no}</td>
+						<td>${payments.amount}</td>
+						<td>${payments.status}</td>
+						<td>${payments.reference_no}</td>
+						<td>${payments.reason_code}</td>
+						<td>${payments.created_at}</td>
+					</tr>
+				</c:forEach>
+				<!-- End of Loop through payment history records -->
+			</table>
+			<!-- End of Payment History Table -->
+		</c:if>
+	
+	<!-- End of Container -->
+	
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https:www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Deposit Form</title>
+</head>
+<body>
+	
+	<form action="/transact/deposit" method="post">
+		<input type="text" name="deposit_amount">
+		<br>
+		
+		<select name="deposit_type">
+		  <option value="Saving">Saving</option>
+		  
+		  <c:if test="${userAccounts != null}">
+			  <c:forEach items="${userAccounts}" var="selectAccount">
+				  <option value="${selectAccount.account_id}">${selectAmount.account_name}</option>
+			  </c:forEach>
+		  </c:if> 
+		</select>
+		<br>
+	</form>
+	
+	
+</body>
+</html>

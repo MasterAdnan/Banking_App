@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Payment Form</title>
+</head>
+<body>
+	
+	<!-- Payment Card -->
+		
+		<!-- Payment Form -->
+			<form action="/transact/payment" method="post">
+				<!-- Form Group -->
+					<label for="">Account Holder / Beneficiery</label>
+					<input type="text" name="benefieciary" placeholder="Enter Account Holder / Benefieciary name">	
+				<!-- End of Form Group -->
+			
+				<!-- Form Group -->
+					<label for="">Beneficiery Account Number</label>
+					<input type="text" name="account_number" placeholder="Enter Benefieciary Account No">	
+				<!-- End of Form Group -->
+			
+				<!-- Form Group -->
+					<label for="">Select Account</label>
+					<!-- Select Account Option -->
+						<select name="account_id">
+							<option value="">-- Select Account --</option>
+							<c:if test="${userAccounts != null}">
+								<c:forEach items="${userAccounts}" var="selectAccount">
+									<option value="${selectAccount.account_id}">${selectAccount.account_name}</option>
+								</c:forEach>
+							</c:if>
+						</select>
+					<!-- End of Select Account Option -->
+				
+					<!-- Form Group -->
+						<label for="">Reference</label>
+						<input type="text" name="reference" placeholder="Enter Reference">	
+					<!-- End of Form Group -->
+				
+					<!-- Form Group -->
+						<label for="">Enter Payment Method</label>
+						<input type="text" name="payment_amount" placeholder="Enter Payment Amount">	
+					<!-- End of Form Group -->
+				
+					<button>Pay</button>
+				
+				<!-- End of Form Group -->
+			
+			</form>
+			
+		<!-- End of Payment Form ->
+		
+	<!-- End of Payment Card -->
+	
+</body>
+</html>

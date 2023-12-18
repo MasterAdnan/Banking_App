@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<!-- Deposit Form -->
+	<form action="/transact/withdraw" method="post" class="deposit-form">
+		<!-- FORM GROUP -->
+		<label for=""> Enter Withdrawal Amount </label>
+		<input type="text" name="withdrawal_amount" placeholder="Enter Withdrawal Amount">
+		<!-- End of FORM GROUP -->
+		
+		<!-- FORM GROUP -->
+		<label for="">Select Amount</label>
+		
+		<!-- Select Amount Option -->
+		<select name="account_id">
+		  <option value="Select Amount">-- Select Amount --</option>
+		  
+		  <c:if test="${userAccounts != null}">
+			  <c:forEach items="${userAccounts}" var="selectAccount">
+				  <option value="${selectAccount.account_id}">${selectAmount.account_name}</option>
+			  </c:forEach>
+		  </c:if> 
+		  
+		</select>
+		<!-- End Select Amount Option -->
+		
+		<!-- End of FORM GROUP -->
+		
+		<button>Withdraw</button>
+		
+	</form>
+	
+	
+
+</body>
+</html>
